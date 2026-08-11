@@ -1,4 +1,6 @@
 .env
 *.db
 __pycache__/
-sync.log
+sync.logcredentials.json
+*.log
+frontend/dist/
