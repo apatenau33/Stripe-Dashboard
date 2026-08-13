@@ -4,7 +4,7 @@ A full-stack dashboard that pulls payment data from the Stripe API, stores it lo
 
 Built as a portfolio project. Runs against Stripe test data.
 
-![Dashboard](docs/screenshot.png)
+![Dashboard](DOCS/screenshot.png)
 
 ## What it does
 
