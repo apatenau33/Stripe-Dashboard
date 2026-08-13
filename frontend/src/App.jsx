@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import demoSummary from "./demoSummary.json";
+import demoPayments from "./demoPayments.json";
 
-const API = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+const API = import.meta.env.VITE_API_URL;
+const DEMO = !API;
 
 function money(n) {
   return new Intl.NumberFormat("en-US", {
@@ -18,6 +21,12 @@ export default function App() {
 
   useEffect(() => {
     async function load() {
+      if (DEMO) {
+        setSummary(demoSummary);
+        setPayments(demoPayments);
+        setLoading(false);
+        return;
+      }
       try {
         const [s, p] = await Promise.all([
           fetch(`${API}/api/summary`).then((r) => r.json()),
@@ -42,6 +51,7 @@ export default function App() {
       <header>
         <h1>Stripe Payments</h1>
         <p className="sub">
+          {DEMO && "Demo snapshot · "}
           Last synced {summary.last_synced?.slice(0, 16).replace("T", " ")} UTC
         </p>
       </header>
