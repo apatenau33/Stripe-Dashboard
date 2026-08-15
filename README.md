@@ -2,7 +2,7 @@
 
 A full-stack dashboard that pulls payment data from the Stripe API, stores it locally, and serves it through a REST API to a React front end.
 
-Built as a portfolio project. Runs against Stripe test data.
+**[View live demo →](https://stripe-dashboard-lake.vercel.app/)**
 
 ![Dashboard](DOCS/screenshot.png)
 
